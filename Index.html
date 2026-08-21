@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Flow — Gestão de Cafés</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="app-header__container">
+            <h1 class="app-header__logo">
+                <a href="#/preparar">☕ Coffee Flow</a>
+            </h1>
+            <nav class="app-nav" aria-label="Navegação principal">
+                <ul class="app-nav__list">
+                    <li><a href="#/preparar" data-route="preparar" class="app-nav__link">⚡ Preparar</a></li>
+                    <li><a href="#/cafes" data-route="cafes" class="app-nav__link">🫘 Cafés</a></li>
+                    <li><a href="#/metodos" data-route="metodos" class="app-nav__link">⏱️ Métodos</a></li>
+                    <li><a href="#/historico" data-route="historico" class="app-nav__link">📊 Histórico</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="app-main" id="app-main">
+        <section class="view" id="view-preparar" data-view="preparar">
+            <div class="view__header">
+                <h2>Preparar Café</h2>
+                <p class="view__subtitulo">Selecione café e método para começar</p>
+            </div>
+            <div class="view__content" id="content-preparar"></div>
+        </section>
+        <section class="view" id="view-cafes" data-view="cafes" hidden>
+            <div class="view__header">
+                <h2>Cafés</h2>
+                <p class="view__subtitulo">Gerencie seus cafés</p>
+            </div>
+            <div class="view__content" id="content-cafes"></div>
+        </section>
+        <section class="view" id="view-metodos" data-view="metodos" hidden>
+            <div class="view__header">
+                <h2>Métodos</h2>
+                <p class="view__subtitulo">Métodos de preparo</p>
+            </div>
+            <div class="view__content" id="content-metodos"></div>
+        </section>
+        <section class="view" id="view-historico" data-view="historico" hidden>
+            <div class="view__header">
+                <h2>Histórico</h2>
+                <p class="view__subtitulo">Preparações realizadas</p>
+            </div>
+            <div class="view__content" id="content-historico"></div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>Dados armazenados localmente no navegador. Sem sincronização em nuvem.</p>
+    </footer>
+
+    <div id="modal-container" class="modal-container"></div>
+    <div id="alert-container" class="alert-container"></div>
+
+    <template id="template-modal">
+        <div class="modal-overlay">
+            <div class="modal" role="dialog" aria-modal="true">
+                <button class="modal__fechar" aria-label="Fechar">×</button>
+                <div class="modal__conteudo"></div>
+            </div>
+        </div>
+    </template>
+
+    <template id="template-alerta">
+        <div class="alerta" role="alert">
+            <span class="alerta__mensagem"></span>
+            <button class="alerta__fechar" aria-label="Fechar">×</button>
+        </div>
+    </template>
+
+    <!-- Scripts carregados em ordem de dependência -->
+    <script src="js/config/constants.js"></script>
+    <script src="js/utils/validators.js"></script>
+    <script src="js/utils/errors.js"></script>
+    <script src="js/storage/storage-core.js"></script>
+    <script src="js/storage/cafes-storage.js"></script>
+    <script src="js/storage/metodos-storage.js"></script>
+    <script src="js/storage/preparacoes-storage.js"></script>
+    <script src="js/calc/calculadora.js"></script>
+    <script src="js/calc/jorradas.js"></script>
+    <script src="js/modules/cafes.js"></script>
+    <script src="js/modules/metodos.js"></script>
+    <script src="js/modules/preparacao.js"></script>
+    <script src="js/modules/avaliacao.js"></script>
+    <script src="js/modules/historico.js"></script>
+    <script src="js/ui/dom-utils.js"></script>
+    <script src="js/ui/components.js"></script>
+    <script src="js/ui/cafe-view.js"></script>
+    <script src="js/ui/metodo-view.js"></script>
+    <script src="js/ui/preparacao-view.js"></script>
+    <script src="js/ui/historico-view.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

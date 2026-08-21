@@ -1,0 +1,21 @@
+@media (max-width: 480px) {
+    .app-header__container { flex-direction: column; gap: var(--espaco-sm); }
+    .app-nav__list { width: 100%; justify-content: space-around; }
+    .app-nav__link { flex-direction: column; padding: var(--espaco-xs); font-size: 0.75rem; }
+    .app-main { padding: var(--espaco-md); }
+    .view__titulo { font-size: 1.5rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .modal { padding: var(--espaco-md); max-width: 95vw; }
+    .filtros { flex-direction: column; align-items: stretch; }
+    .filtros__input, .filtros__select { width: 100%; min-width: auto; }
+    .btn { width: 100%; justify-content: center; }
+    .btn--pequeno { width: auto; }
+    .tabela-jorradas { font-size: 0.85rem; }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .cards-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    .modal { max-width: 90vw; }
+}
+@media (min-width: 769px) {
+    .modal { max-width: 600px; }
+}
